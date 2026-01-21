@@ -114,7 +114,7 @@ export const Input = () => {
             return (
               <div
                 key={index}
-                className="flex justify-between bg-slate-100 p-3 rounded-xl items-center h-15 text-black"
+                className="flex justify-between bg-slate-100 p-3 rounded-xl items-center h-fit text-black min-h-15"
               >
                 <div className="flex gap-2">
                   <input
@@ -123,10 +123,12 @@ export const Input = () => {
                     checked={task.isCompleted}
                     onChange={() => isCheck(task.id)}
                   />
-                  <div>
+                  <div className="w-50 h-fit wrap-break-word">
                     <p
                       className={
-                        task.isCompleted ? "line-through text-gray-500" : ""
+                        task.isCompleted
+                          ? "line-through text-gray-500 w-50"
+                          : ""
                       }
                     >
                       {task.task}
